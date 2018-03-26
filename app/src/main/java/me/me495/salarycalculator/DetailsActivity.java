@@ -54,8 +54,8 @@ public class DetailsActivity extends AppCompatActivity {
         Log.e("salary", intent.getStringExtra("salary"));
         salary = Double.valueOf(intent.getStringExtra("salary"));
         Log.e("city", intent.getStringExtra("city"));
-        insuranceRate = Data.getTaxRage(city);
-        insuranceValue = TaxUtil.getTaxValue(insuranceRate, salary);
+        insuranceRate = Data.getInsuranceRate(city);
+        insuranceValue = TaxUtil.getInsuranceValue(insuranceRate, salary);
         personalIncomeTax = TaxUtil.getPersonalIncomeTax(salary-insuranceValue.getTotal0());
         sliceValues.add(new SliceValue((float) insuranceValue.getTotal0(), getResources().getColor(R.color.colorInsurance)));
         sliceValues.add(new SliceValue((float) personalIncomeTax, getResources().getColor(R.color.colorPersonal)));

@@ -1,0 +1,52 @@
+{"insurance":{
+  "北京":{
+    "yangLao0":0.08, "yangLao1":0.21,
+    "yiLiao0":0.02, "yiLiao1":0.11, "addition":0,
+    "shiYe0":0.005, "shiYe1":0.015,
+    "gongShang0":0, "gongShang1":0.005,
+    "shengYu0":0, "shengYu1":0.01,
+    "zhuFang0":0.07, "zhuFang1":0.07,
+    "sheBaoLower":3271.00, "sheBaoUpper":16353.00,
+    "jiJinLower":1814.29, "jiJinUpper":16357.14
+  },
+  "上海":{
+    "yangLao0":0.08, "yangLao1":0.21,
+    "yiLiao0":0.02, "yiLiao1":0.11, "addition":0,
+    "shiYe0":0.005, "shiYe1":0.015,
+    "gongShang0":0, "gongShang1":0.005,
+    "shengYu0":0, "shengYu1":0.01,
+    "zhuFang0":0.07, "zhuFang1":0.07,
+    "sheBaoLower":3271.00, "sheBaoUpper":16353.00,
+    "jiJinLower":1814.29, "jiJinUpper":16357.14
+  },
+  "广州":{
+    "yangLao0":0.08, "yangLao1":0.21,
+    "yiLiao0":0.02, "yiLiao1":0.11, "addition":0,
+    "shiYe0":0.005, "shiYe1":0.015,
+    "gongShang0":0, "gongShang1":0.005,
+    "shengYu0":0, "shengYu1":0.01,
+    "zhuFang0":0.07, "zhuFang1":0.07,
+    "sheBaoLower":3271.00, "sheBaoUpper":16353.00,
+    "jiJinLower":1814.29, "jiJinUpper":16357.14
+  },
+  "深圳":{
+    "yangLao0":0.08, "yangLao1":0.21,
+    "yiLiao0":0.02, "yiLiao1":0.11, "addition":0,
+    "shiYe0":0.005, "shiYe1":0.015,
+    "gongShang0":0, "gongShang1":0.005,
+    "shengYu0":0, "shengYu1":0.01,
+    "zhuFang0":0.07, "zhuFang1":0.07,
+    "sheBaoLower":3271.00, "sheBaoUpper":16353.00,
+    "jiJinLower":1814.29, "jiJinUpper":16357.14
+  },
+  "杭州":{
+    "yangLao0":0.08, "yangLao1":0.21,
+    "yiLiao0":0.02, "yiLiao1":0.11, "addition":0,
+    "shiYe0":0.005, "shiYe1":0.015,
+    "gongShang0":0, "gongShang1":0.005,
+    "shengYu0":0, "shengYu1":0.01,
+    "zhuFang0":0.07, "zhuFang1":0.07,
+    "sheBaoLower":3271.00, "sheBaoUpper":16353.00,
+    "jiJinLower":1814.29, "jiJinUpper":16357.14
+  }
+}}

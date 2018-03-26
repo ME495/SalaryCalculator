@@ -10,7 +10,7 @@ import me.me495.salarycalculator.entity.InsuranceValue;
 
 public class TaxUtil {
     //根据工资和税率计算五险一金的金额
-    public static InsuranceValue getTaxValue(InsuranceRate rate, double salary){
+    public static InsuranceValue getInsuranceValue(InsuranceRate rate, double salary){
         InsuranceValue value = new InsuranceValue();
         double base = salary;
         if (base < rate.getSheBaoLower()) {
