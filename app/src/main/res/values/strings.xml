@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">五险一金计算器</string>
+    <string name="calc_result">计算结果</string>
+</resources>
