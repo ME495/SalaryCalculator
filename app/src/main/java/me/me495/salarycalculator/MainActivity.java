@@ -25,13 +25,23 @@ import me.me495.salarycalculator.entity.InsuranceRate;
 
 import static me.me495.salarycalculator.R.array.city_list;
 
+/**
+ * 作者：李航
+ * 时间：2018/3/26
+ * 功能：app的主界面
+ */
 public class MainActivity extends AppCompatActivity {
+    //下拉框
     private Spinner spinner;
+    //社保基数，公积金基数
     private TextView sheBaoBase, jiJinBase;
+    //工资
     private EditText salaryEdit;
-    private ArrayList<String> dataList;
+    //提交按钮
     private Button button;
+    //工资比例
     private InsuranceRate insuranceRate;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Data.init(getApplicationContext());
@@ -42,8 +52,12 @@ public class MainActivity extends AppCompatActivity {
         spinner = findViewById(R.id.spinner);
         button = findViewById(R.id.calc);
         salaryEdit = findViewById(R.id.salary_view);
+
+        //设置下拉框
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner_item, Data.getCitys());
         spinner.setAdapter(adapter);
+
+        //设置按钮监听器，按下按钮跳转到DetailsActivity,并发送城市和工资
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //设置下拉框监听器，选择一个城市后改变社保基数和公积金基数
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -67,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        //设置salaryEdit监听器，工资改变后改变社保基数和公积金基数
         salaryEdit.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -85,6 +103,8 @@ public class MainActivity extends AppCompatActivity {
         });
         setBases();
     }
+
+    //从salaryEdit中获取工资
     private String getSalary() {
         if(salaryEdit.getText()==null || salaryEdit.getText().toString().trim().equals("")) {
             return "0";
@@ -92,6 +112,8 @@ public class MainActivity extends AppCompatActivity {
             return salaryEdit.getText().toString();
         }
     }
+
+    //根据工资和城市设置保险基数和公积金基数
     private void setBases() {
         double salary = Double.valueOf(getSalary());
         String city = spinner.getSelectedItem().toString();

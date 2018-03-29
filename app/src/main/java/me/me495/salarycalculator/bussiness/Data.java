@@ -18,7 +18,9 @@ import me.me495.salarycalculator.entity.InsuranceRate;
 
 /**
  * Created by ME495 on 2018/3/26.
- * 存储数据的类
+ * 作者：程坚
+ * 时间：2018/3/27
+ * 功能：业务类，从数据文件中读取数据并存储
  */
 
 public class Data {
@@ -28,6 +30,7 @@ public class Data {
         return citys;
     }
 
+    //初始化数据，从数据文件中读取数据，并存储在map中
     public static void init(Context context){
         map = new HashMap<>();
         citys = new ArrayList<>();
@@ -66,7 +69,7 @@ public class Data {
 //        map.put("北京", beijing);
     }
 
-
+    //读取数据文件，并变成字符串
     public static String getJson(String fileName,Context context) {
         //将json数据变成字符串
         StringBuilder stringBuilder = new StringBuilder();
@@ -86,6 +89,7 @@ public class Data {
         return stringBuilder.toString();
     }
 
+    //得到对应城市的税率
     public static InsuranceRate getInsuranceRate(String city){
         return map.get(city);
     }

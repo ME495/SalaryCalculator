@@ -5,13 +5,17 @@ import me.me495.salarycalculator.entity.InsuranceValue;
 
 /**
  * Created by ME495 on 2018/3/26.
- * 税额计算工具
+ * 作者：程坚
+ * 时间：2018/3/27
+ * 功能：业务类，计算纳税额
  */
 
 public class TaxUtil {
     //根据工资和税率计算五险一金的金额
     public static InsuranceValue getInsuranceValue(InsuranceRate rate, double salary){
         InsuranceValue value = new InsuranceValue();
+
+        //计算社保基数
         double base = salary;
         if (base < rate.getSheBaoLower()) {
             base = rate.getSheBaoLower();
@@ -39,6 +43,7 @@ public class TaxUtil {
         value.setShengYu1(base * rate.getShengYu1());
         value.setShengYuTotal(value.getShengYu0() + value.getShengYu1());
 
+        //计算公积金基数
         base = salary;
         if (base < rate.getJiJinLower()) {
             base = rate.getJiJinLower();
@@ -56,6 +61,7 @@ public class TaxUtil {
         return value;
     }
 
+    //根据扣除五险一金的工资计算个人所得税
     public static double getPersonalIncomeTax(double value) {
         if (value <= 3500) return 0;
         value -= 3500;

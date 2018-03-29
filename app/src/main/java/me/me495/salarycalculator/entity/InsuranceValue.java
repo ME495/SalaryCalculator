@@ -2,7 +2,9 @@ package me.me495.salarycalculator.entity;
 
 /**
  * Created by ME495 on 2018/3/26.
- * 税额
+ * 作者：程坚
+ * 时间：2018/3/27
+ * 功能：实体类，表示纳税额
  */
 
 public class InsuranceValue {
