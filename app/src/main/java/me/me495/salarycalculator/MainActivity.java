@@ -67,7 +67,8 @@ public class MainActivity extends AppCompatActivity {
                 intent.setClass(MainActivity.this, DetailsActivity.class);
                 intent.putExtra("city", city);
                 intent.putExtra("salary", salary);
-                startActivity(intent);
+//                startActivity(intent);
+                startActivityForResult(intent, 11);
             }
         });
 
@@ -102,6 +103,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         setBases();
+    }
+
+    //如果resultCode==12，说明工资不够交五险一金
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Log.e("result", requestCode+" "+resultCode);
+        if (requestCode== 11 && resultCode==12) {
+            Toast.makeText(getApplicationContext(), "你的工资不够交五险一金！", Toast.LENGTH_SHORT).show();
+        }
     }
 
     //从salaryEdit中获取工资

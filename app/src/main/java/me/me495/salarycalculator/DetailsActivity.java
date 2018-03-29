@@ -71,6 +71,12 @@ public class DetailsActivity extends AppCompatActivity {
         insuranceRate = Data.getInsuranceRate(city);
         //计算出五险一金所要缴纳的数量
         insuranceValue = TaxUtil.getInsuranceValue(insuranceRate, salary);
+
+        //如果工资不够交五险一金，则返回主界面
+        if (insuranceValue.getTotal0() > salary) {
+            setResult(12);
+            finish();
+        }
         //计算个人所得税
         personalIncomeTax = TaxUtil.getPersonalIncomeTax(salary-insuranceValue.getTotal0());
 
